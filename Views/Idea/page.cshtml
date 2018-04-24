@@ -1,0 +1,25 @@
+ @{
+     ViewData["Title"] = "Idea Page";
+ }
+ <center>
+ <div class="nav">
+     <form class="logout" action="/logout" method="post">
+         <input class="logout btn-link" type="submit" value="Logout">
+     </form>
+     <a class="dashboard" href="/idea">Bright Ideas</a>
+ </div>
+
+ <div id="container">
+     <div id="left">
+     <p>Name: @ViewBag.Idea.User.Name</p>
+     <p>Alias: @ViewBag.Idea.User.Alias</p>
+     <p>Email: @ViewBag.Idea.User.Email</p>
+     <h4>Says: @ViewBag.Idea.Description</h4>
+     <p>People who liked this post:</p>
+    
+         @foreach (var participant in @ViewBag.Participants) {
+             <p>@participant.User.Name AKA @participant.User.Alias</p>
+         }
+    </div>
+</div>
+</center>

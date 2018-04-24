@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Create Idea";
+}
+@model redbelt.Models.AddIdeaViewModel
+<center>
+<div class="nav">
+    <form class="logout" action="/logout" method="post">
+        <input class="logout btn-link" type="submit" value="Logout">
+    </form>
+    <a class="dashboard" href="/idea">Bright Ideas</a>
+</div>
+
+<h1>What are you thinking about?</h1>
+<br>
+<form action="add" method="post">
+    <label asp-for="Description">Post something witty here:</label>
+    <input asp-for="Description">
+    <span asp-validation-for="Description"></span>
+    <br>
+    <input class="submit btn-link" type="submit" value="Post Thought">
+</form>
+<div class="messages">
+    <h1>@ViewBag.Message</h1>
+<div>
+</center>
